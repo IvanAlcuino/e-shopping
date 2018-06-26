@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+ 
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body{
+    padding-top:80px;
+}
+
+h3{
+    font-size: 1.4rem;
+}
+
+.bg-light{
+    background-color: #f8f9fa !important;
+}

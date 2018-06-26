@@ -1,0 +1,38 @@
+<div class="container"> 
+  <div class="card col-md-4">
+    <header class="card-header"> 
+      <h4 class="card-title mt-2">Login</h4>
+    </header>
+    <article class="card-body">
+      
+    <form #loginForm="ngForm"   (ngSubmit)="login(loginForm.value)" class="col s12 white">
+        <div class="form-row">
+            <div class="col form-group">
+              <!-- <label>Email </label>     -->
+                <input type="text" class="form-control" #email ngModel name="email" placeholder="email" required >
+            </div> 
+            <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+              Email is invalid.
+            </div>
+            
+        </div> 
+        <div class="form-group"> 
+            <input type="password" class="form-control" #password ngModel name="password" placeholder="password" required>
+            
+        </div>
+        
+        <div class="form-group"> 
+            <button  [disabled]="!loginForm.valid" class="btn btn-primary btn-block" type="submit">Login</button>
+            <div *ngIf="error_message" class="alert alert-danger"  >
+              {{error_message}}
+            </div>
+            <hr/>
+            <button class="btn btn-primary btn-block" (click)="loginWithGoogle()">Login with Google</button>
+            
+        </div> 
+    </form>
+ 
+
+    </article>  
+  </div>  
+</div>  

@@ -1,0 +1,45 @@
+<div class="container"> 
+    <div class="card col-md-6">
+      <header class="card-header"> 
+        <h4 class="card-title mt-2">Sign Up</h4>
+      </header>
+      <article class="card-body">
+        
+      <form #signupForm="ngForm" (ngSubmit)="save(signupForm.value)"  class="col s12 white">
+          <div class="form-row"> 
+              <label>Email </label>       
+              <input type="text" class="form-control" #email="ngModel" ngModel name="email" id="email" placeholder="" required email>
+              <!-- <label [attr.data-error]="email.errors!=null?(email.errors.required?'Required field!'):''">Email</label>  -->
+              <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                Email is required.
+                </div>
+          </div> 
+          <div class="form-row">   
+              <label>Password </label>    
+              <input class="form-control validate" #password="ngModel" ngModel type="password" name="password" id="password"  required minlength="6"> 
+              <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                Password should be atleast 6 characters.
+              </div>
+              <!-- <label [attr.data-error]="password.errors!=null?(password.errors.required?'Required field!':'Minimum 3 characters needed'):''">Password</label>  -->
+          </div> 
+          <div class="form-row">
+              <div class="col form-group">
+                <label>First name </label>    
+                  <input type="text" class="form-control" #firstName="ngModel" ngModel name="firstName" id="firstName" placeholder="" required>
+              </div> 
+              <div class="col form-group">
+                <label>Last name</label>
+                <input type="text" class="form-control" #lastName="ngModel" ngModel name="lastName" id="lastName" placeholder="" required>
+              </div>  
+          </div>  
+          
+          <div class="form-group"> 
+              <button  [disabled]="!signupForm.valid" class="btn btn-primary btn-block" type="submit">Sign Up</button>
+          </div> 
+      </form>
+  
+      </article>  
+    </div>  
+  </div>  
+
+ 

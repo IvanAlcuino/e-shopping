@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-3">   
+      
+  </div>
+  
+  <div class="col-md-9"> 
+    <div>
+      <a [routerLink]="['/products/add']" class="btn btn-primary">Add Product</a>
+    </div>
+    <br/>
+    <div class="row">  
+      
+      <ng-container *ngFor="let p of products; let i = index" > 
+        <div class="col" > 
+          <product-card [product]="p" [optionVisible]="true"></product-card>
+        </div>
+        <div *ngIf="(i+1)%4===0" class="w-100"></div>
+      </ng-container> 
+    </div>  
+  </div>
+
+</div>

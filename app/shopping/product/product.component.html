@@ -1,0 +1,18 @@
+<div class="row"  >
+  <div class="col-6" >
+    <div class="text-center">
+      <img class="prod-img" [src]="product?.imageUrl" *ngIf="product?.imageUrl">
+    </div>  
+  </div>
+  <div class="col-6" >
+    <h3 class="prod-title">{{ product.name }}</h3>
+    <p class="prod-price">P{{ product.price | number:'2.2-2'}}</p>
+    <p class="prod-qty">1</p>  
+    <div>
+      <input type="button" class="btn btn-primary" value="Check out" (click)="addToCart(product)" />
+      &nbsp;&nbsp;
+    </div>
+  </div> 
+</div>
+
+<app-footer></app-footer>

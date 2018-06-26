@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-3">   
+      <products-panel [category]="category"></products-panel>
+  </div>
+  
+  <div class="col-md-9"> 
+    <div class="row">  
+      <ng-container *ngFor="let p of products; let i = index" > 
+        <div class="col" > 
+          <product-card [product]="p" ></product-card>
+        </div>
+        <div *ngIf="(i+1)%4===0" class="w-100"></div> 
+       
+      </ng-container> 
+      
+    </div>  
+  </div>
+
+</div>
